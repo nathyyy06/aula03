@@ -29,6 +29,8 @@ export default function App() {
                 </li>
             ))}
         </ul>
-        </>
-    )
-}
+        <h1>Lista de Produtos</h1>
+        <ListaProdutos produtos={lista} />
+    </>
+
+)}
