@@ -1,4 +1,6 @@
+
 import {useEffect, useState} from "react";
+import ListaProdutos from "./ListaProdutos";
 
 export default function App() {
     const [lista,setLista] = useState([]);
@@ -6,7 +8,7 @@ export default function App() {
     useEffect(() => {
         const receberListaProdutos = async () => {
             try{
-                const resposta = await fetch('https://fakestoreapi.com/product');
+                const resposta = await fetch('https://fakestoreapi.com/products');
                 const dados = await resposta.json();
                 setLista(dados);
             }catch{
@@ -18,18 +20,7 @@ export default function App() {
 
     return(
         <>
-        <h1>lista de produtos</h1>
-        <ul>
-            {produtos.map( produto =>(
-                <li key={produto.id}>
-                  <h2>{produto.id}</h2>  
-                  <p>{produto.description}</p>
-                  <p>preço: R${produto.price}</p>
-                  <img src={produto.image} alt={produto.title} width={100}/>
-                </li>
-            ))}
-        </ul>
-        <h1>Lista de Produtos</h1>
+        <h1>Crystal</h1>
         <ListaProdutos produtos={lista} />
     </>
 
