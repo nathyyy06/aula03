@@ -2,17 +2,17 @@ import styles from '../styles/listaProdutos.module.css'
 
 export default function ListaProdutos({ produtos }) {
     return (
-        <>
-            <ul className={styles.bloco}>
-                {produtos.map(produto => (
-                    <li key={produto.id}>
-                        <h2>{produto.id}</h2>
+        <div className={styles.container}>
+            {produtos.map(produto => (
+                <div key={produto.id} className={styles.produto}>
+                    <img src={produto.image} alt={produto.title} />
+                    <div className={styles.info}>
+                        <h3>{produto.title}</h3>
                         <p>{produto.description}</p>
-                        <p>preço: R${produto.price}</p>
-                        <img src={produto.image} alt={produto.title} width={100} />
-                    </li>
-                ))}
-            </ul>
-        </>
+                        <p>Preço: R${produto.price}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
     )
 }

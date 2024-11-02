@@ -20,7 +20,7 @@ export default function App() {
 
     return(
         <>
-        <h1>Crystal</h1>
+        <h1>Crystal 💎</h1>
         <ListaProdutos produtos={lista} />
     </>
 
