@@ -1,6 +1,7 @@
 
 import {useEffect, useState} from "react";
 import ListaProdutos from "./ListaProdutos";
+import Loading from "./Loading";
 
 export default function App() {
     const [lista,setLista] = useState([]);
@@ -17,6 +18,12 @@ export default function App() {
         }
         receberListaProdutos();
     },[])
+
+    if (lista.length == 0) {
+        return (
+            <Loading></Loading>
+        )
+    }
 
     return(
         <>

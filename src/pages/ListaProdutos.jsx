@@ -1,5 +1,4 @@
 import styles from '../styles/listaProdutos.module.css'
-
 export default function ListaProdutos({ produtos }) {
     return (
         <div className={styles.container}>
