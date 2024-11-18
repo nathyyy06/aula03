@@ -21,13 +21,27 @@ export default function App() {
 
     if (lista.length == 0) {
         return (
+            <h1>Carregando...</h1>,
             <Loading></Loading>
         )
+    }
+
+    const orderAz = () =>{
+      const listaAux = [...lista].sort((a,b) => a.title.localeCompare(b.title));
+      setLista(listaAux);
+    }
+
+    const orderZa = () =>{ 
+        const listaAux = [...lista].sort((a,b) => b.title.localeCompare(a.title));
+        
+        setLista(listaAux);
     }
 
     return(
         <>
         <h1>Crystal 💎</h1>
+        <button onClick={()=> orderAz()}>Az</button>
+        <button onClick={()=> orderZa()}>Za</button>
         <ListaProdutos produtos={lista} />
     </>
 
