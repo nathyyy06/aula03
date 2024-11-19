@@ -1,44 +1,90 @@
-h1{
-    color: #000000;
-    text-align: center;
+h1 {
+  color: #4A2C4A; 
+  text-align: center;
+  margin: 20px 0;
 }
 
+/* Container Style */
 .container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/*  Card Style */
+.produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: calc(20% - 20px); 
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #EAB8D1; 
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #FFF;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.produto:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Style */
+.produto img {
+  width: 90%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Information Style */
+.info {
+  text-align: center;
+}
+
+
+body {
+  background-color: #F8E1E6; 
+  font-family: Arial, sans-serif;
+}
+
+/* Price Style */
+.preco {
+  font-weight: bold;
+  color: #D36E9A; 
+  margin: 10px 0;
+}
+
+/* Button Style */
+.botao {
+  background-color: #D36E9A; 
+  color: white;
+  border: none; 
+  padding: 10px 20px; 
   
+}
+
+
+.botao:hover {
+  background-color: #B95C7A; 
+  transform: translateY(-2px); 
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .produto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #FFFF;
+      flex-basis: calc(45% - 20px); /* 2 cards por linha em telas menores */
   }
-  
-  .produto img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    
+}
+
+@media (max-width: 480px) {
+  .produto {
+      flex-basis: calc(100% - 20px); /* 1 card por linha em telas muito pequenas */
   }
-  
-  .info {
-    text-align: center;
+}
+
    
-  }
-
-  body {
-    background-color: #C5BAC4;
-  }
-
-    .Loading{
-      
-    }
-

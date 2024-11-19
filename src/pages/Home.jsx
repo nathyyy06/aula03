@@ -37,11 +37,23 @@ export default function App() {
         setLista(listaAux);
     }
 
+    const orderPrecoCrescente = () => {
+        const listaAux = [...lista].sort((a, b) => a.price - b.price);
+        setLista(listaAux);
+    }
+
+    const orderPrecoDecrescente = () => {
+        const listaAux = [...lista].sort((a, b) => b.price - a.price);
+        setLista(listaAux);
+    }
+    
     return(
-        <>
-        <h1>Crystal 💎</h1>
+        <>       
+        <h1>L.K.Bennett </h1>
         <button onClick={()=> orderAz()}>Az</button>
         <button onClick={()=> orderZa()}>Za</button>
+        <button onClick={orderPrecoCrescente}>Preço: Menor para Maior</button>
+        <button onClick={orderPrecoDecrescente}>Preço: Maior para Menor</button>
         <ListaProdutos produtos={lista} />
     </>
 
